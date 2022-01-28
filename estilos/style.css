@@ -72,6 +72,10 @@ article > p {
     box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.25);
 }
 
+.selecionado{
+    box-shadow: 0px 0px 0px 5px #32B72F inset;
+}
+
 .opcao img{
     width: 144px;
     height: 87px;
@@ -107,7 +111,6 @@ footer{
 }
 
 button{
-    background-color: #CBCBCB;
     width: 100%;
     border-radius: 50px;
     color: #FFFFFF;
@@ -115,3 +118,15 @@ button{
     text-align: center;
     padding: 2px 18%;
 }
+
+.selecionar{
+    background-color: #CBCBCB;
+}
+
+.finalizar{
+    background-color: #32B72F;
+    padding: 12px 18%;
+    font-weight: 700;
+}
+
+

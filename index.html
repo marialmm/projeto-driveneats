@@ -24,19 +24,19 @@
         <article class="prato" data-identifier="dishes">
             <p>Primeiro, seu prato</p>
             <div class="opcoes">
-                <div class="opcao" data-identifier="food-option">
+                <div class="opcao prato1" data-identifier="food-option" onclick="selecionarPrato('prato1', 14.90)">
                     <img src="midias/frango_yin_yang 1.png" alt="Frango Yin Yang">
                     <p class="titulo" data-identifier="food-title">Frango Yin Yang</p>
                     <p class="descricao">Um pouco de batata, um pouco de salada</p>
                     <p class="preco" data-identifier="food-price">R$ 14,90</p>
                 </div>
-                <div class="opcao" data-identifier="food-option">
+                <div class="opcao prato2" data-identifier="food-option" onclick="selecionarPrato('prato2', 13.90)">
                     <img src="midias/frango_yin_yang 1.png" alt="Frango Yin Yang">
                     <p class="titulo" data-identifier="food-title">Frango Yin Yang</p>
                     <p class="descricao">Um pouco de batata. um pouco de salada</p>
                     <p class="preco" data-identifier="food-price">R$ 14,90</p>
                 </div>
-                <div class="opcao" data-identifier="food-option">
+                <div class="opcao prato3" data-identifier="food-option" onclick="selecionarPrato('prato3', 12.90)">
                     <img src="midias/frango_yin_yang 1.png" alt="Frango Yin Yang">
                     <p class="titulo" data-identifier="food-title">Frango Yin Yang</p>
                     <p class="descricao">Um pouco de batata. um pouco de salada</p>
@@ -47,19 +47,19 @@
         <article class="bebida" data-identifier="drinks"> 
             <p>Agora, sua bebida</p>
             <div class="opcoes">
-                <div class="opcao" data-identifier="food-option">
+                <div class="opcao bebida1" data-identifier="food-option" onclick="selecionarBebida('bebida1', 4.90)">
                     <img src="midias/coquinha_gelada 1.png" alt="Latas de Coca-Cola">
                     <p class="titulo" data-identifier="food-title">Coquinha gelada</p>
                     <p class="descricao">Lata 350 mL</p>
                     <p class="preco" data-identifier="food-price">R$ 4,90</p>
                 </div>
-                <div class="opcao" data-identifier="food-option">
+                <div class="opcao bebida2" data-identifier="food-option" onclick="selecionarBebida('bebida2', 5.90)">
                     <img src="midias/coquinha_gelada 1.png" alt="Latas de Coca-Cola">
                     <p class="titulo" data-identifier="food-title">Coquinha gelada</p>
                     <p class="descricao">Lata 350 mL</p>
                     <p class="preco" data-identifier="food-price">R$ 4,90</p>
                 </div>
-                <div class="opcao" data-identifier="food-option">
+                <div class="opcao bebida3" data-identifier="food-option" onclick="selecionarBebida('bebida3', 6.90)">
                     <img src="midias/coquinha_gelada 1.png" alt="Latas de Coca-Cola">
                     <p class="titulo" data-identifier="food-title">Coquinha gelada</p>
                     <p class="descricao">Lata 350 mL</p>
@@ -70,19 +70,19 @@
         <article class="sobremesa" data-identifier="desserts">
             <p>Por fim, sua sobremesa</p>
             <div class="opcoes">
-                <div class="opcao" data-identifier="food-option">
+                <div class="opcao sobremesa1" data-identifier="food-option" onclick="selecionarSobremesa('sobremesa1', 7.90)">
                     <img src="midias/pudim 1.png" alt="Pudim com calda de caramelo">
                     <p class="titulo" data-identifier="food-title">Pudim</p>
                     <p class="descricao">Apenas pudim</p>
                     <p class="preco" data-identifier="food-price">R$ 7,90</p>
                 </div>
-                <div class="opcao" data-identifier="food-option">
+                <div class="opcao sobremesa2" data-identifier="food-option" onclick="selecionarSobremesa('sobremesa2', 6.90)">
                     <img src="midias/pudim 1.png" alt="Pudim com calda de caramelo">
                     <p class="titulo" data-identifier="food-title">Pudim</p>
                     <p class="descricao">Apenas pudim</p>
                     <p class="preco" data-identifier="food-price">R$ 7,90</p>
                 </div>
-                <div class="opcao" data-identifier="food-option">
+                <div class="opcao sobremesa3" data-identifier="food-option" onclick="selecionarSobremesa('sobremesa3', 8.90)">
                     <img src="midias/pudim 1.png" alt="Pudim com calda de caramelo">
                     <p class="titulo" data-identifier="food-title">Pudim</p>
                     <p class="descricao">Apenas pudim</p>
@@ -93,8 +93,10 @@
     </main>
 
     <footer>
-        <button>Selecione os 3 itens para fechar o pedido</button>
+        <button class="selecionar">Selecione os 3 itens para fechar o pedido</button>
     </footer>
+
+    <script src="script/script.js"></script>
 </body>
 
 </html>
