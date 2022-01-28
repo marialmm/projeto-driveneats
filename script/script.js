@@ -4,6 +4,7 @@ let sobremesa = 0;
 let precoPrato = 0;
 let precoBebida = 0;
 let precoSobremesa = 0;
+let resultado = 0;
 
 function ativarBotaoFinalizar(){
     if (prato != 0 && bebida != 0 && sobremesa != 0){
@@ -51,15 +52,13 @@ function selecionarSobremesa(sobremesaSelecionada, preco){
 
 }
 
-function pedirNomeEEndereco(){
-    let nome = prompt('Qual seu nome?');
-    let endereco = prompt('Qual seu endereço?');
-}
 
 function finalizarPedido(){
     if (prato != 0 && bebida != 0 && sobremesa != 0){
-
-    } else{
-        alert('Selecione um prato, uma bebida e uma sobremesa')
+        resultado = (precoPrato + precoBebida + precoSobremesa).toFixed(2);
+        let nome = prompt('Qual seu nome?');
+        let endereco = prompt('Qual seu endereço?');
+        let mensagem = `Olá, gostaria de fazer o pedido:\n- Prato: ${prato}\n- Bebida: ${bebida}\n- Sobremesa: ${sobremesa}\nTotal: R$ ${resultado}\n\nNome: ${nome}\nEndereço: ${endereco}`;
+        window.open(`https://wa.me/5512997125935?text=${encodeURIComponent(mensagem)}`);
     }
 }
