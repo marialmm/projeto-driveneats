@@ -18,6 +18,7 @@ header {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     position: fixed;
     top: 0%;
+    z-index: 1;
 }
 
 h1 {
@@ -70,10 +71,29 @@ article > p {
     flex-direction: column;
     justify-content: space-between;
     box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.25);
+    position: relative;
+}
+
+.icone{
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    width: 16px;
+    display: none;
+}
+
+ion-icon{
+    font-size: 18px;
+    color: #32B72F;
+    
 }
 
 .selecionado{
     box-shadow: 0px 0px 0px 5px #32B72F inset;
+}
+
+.selecionado .icone{
+    display: block;
 }
 
 .opcao img{
@@ -129,4 +149,77 @@ button{
     font-weight: 700;
 }
 
+.confirmacao{
+    width: 100vw;
+    height: 100vh;
+    background-color: #FFFFFFE5;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.janela{
+    background-color: #50D074;
+    border-radius: 9px;
+    color: #FFFFFF;
+    padding: 21px 24px;
+    width: 377px;
+    height: 353px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.janela .titulo{
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+    margin-bottom: 28px;
+}
+
+.escolha{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 22px;
+    line-height: 26px;
+}
+
+.total{
+    font-weight: 700;
+    width: 100%;
+}
+
+.preco-total{
+    width: 121px;
+}
+
+.pedir{
+    background-color: #FFFFFF;
+    color: #50D074;
+    height: 52px;
+    width: 329px;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+    border: none;
+    border-radius: 100px;
+    padding: 0px;
+}
+
+.cancelar{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.escondido{
+    display: none;
+}

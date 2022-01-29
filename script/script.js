@@ -4,7 +4,7 @@ let sobremesa = 0;
 let precoPrato = 0;
 let precoBebida = 0;
 let precoSobremesa = 0;
-let resultado = 0;
+let total = 0;
 
 function ativarBotaoFinalizar(){
     if (prato != 0 && bebida != 0 && sobremesa != 0){
@@ -12,6 +12,7 @@ function ativarBotaoFinalizar(){
         botao.classList.add('finalizar');
         botao.classList.remove('selecionar');
         botao.innerHTML = 'Fechar pedido';
+        total = precoPrato + precoBebida + precoSobremesa;
     }
 }
 
@@ -52,13 +53,30 @@ function selecionarSobremesa(sobremesaSelecionada, preco){
 
 }
 
+function ativarConfirmacao(){
+    if (prato != 0 && bebida != 0 && sobremesa != 0){
+        const confirmacao = document.querySelector('.confirmacao');
+        confirmacao.classList.remove('escondido');
+        document.querySelector('.opcao-prato').innerHTML = prato;
+        document.querySelector('.preco-prato').innerHTML = precoPrato.toFixed(2).toString().replace('.', ',');
+        document.querySelector('.opcao-bebida').innerHTML = bebida;
+        document.querySelector('.preco-bebida').innerHTML = precoBebida.toFixed(2).toString().replace('.', ',');
+        document.querySelector('.opcao-sobremesa').innerHTML = sobremesa;
+        document.querySelector('.preco-sobremesa').innerHTML = precoSobremesa.toFixed(2).toString().replace('.', ',');
+        document.querySelector('.preco-total').innerHTML = total.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'});
+    }
+}
+
+function cancelar(){
+    const confirmacao = document.querySelector('.confirmacao');
+    confirmacao.classList.add('escondido');
+}
 
 function finalizarPedido(){
     if (prato != 0 && bebida != 0 && sobremesa != 0){
-        resultado = (precoPrato + precoBebida + precoSobremesa).toFixed(2);
         let nome = prompt('Qual seu nome?');
         let endereco = prompt('Qual seu endereço?');
-        let mensagem = `Olá, gostaria de fazer o pedido:\n- Prato: ${prato}\n- Bebida: ${bebida}\n- Sobremesa: ${sobremesa}\nTotal: R$ ${resultado}\n\nNome: ${nome}\nEndereço: ${endereco}`;
+        let mensagem = `Olá, gostaria de fazer o pedido:\n- Prato: ${prato}\n- Bebida: ${bebida}\n- Sobremesa: ${sobremesa}\nTotal: R$ ${total}\n\nNome: ${nome}\nEndereço: ${endereco}`;
         window.open(`https://wa.me/5512997125935?text=${encodeURIComponent(mensagem)}`);
     }
 }
