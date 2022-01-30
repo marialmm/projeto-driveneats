@@ -12,12 +12,11 @@ function ativarBotaoFinalizar(){
         botao.classList.add('finalizar');
         botao.classList.remove('selecionar');
         botao.innerHTML = 'Fechar pedido';
-        total = precoPrato + precoBebida + precoSobremesa;
     }
 }
 
 function selecionarPrato(pratoSelecionado, preco){ 
-    prato = pratoSelecionado;
+    prato = document.querySelector(`.${pratoSelecionado} .titulo`).innerText;
     precoPrato = preco;
     let opcoes = document.querySelectorAll('.prato .opcao');
     for (let i=0; i < opcoes.length; i++){
@@ -29,7 +28,7 @@ function selecionarPrato(pratoSelecionado, preco){
 }
 
 function selecionarBebida(bebidaSelecionada, preco){
-    bebida = bebidaSelecionada;
+    bebida = document.querySelector(`.${bebidaSelecionada} .titulo`).innerText;
     precoBebida = preco;
     let opcoes = document.querySelectorAll('.bebida .opcao');
     for (let i=0; i < opcoes.length; i++){
@@ -41,7 +40,7 @@ function selecionarBebida(bebidaSelecionada, preco){
 }
 
 function selecionarSobremesa(sobremesaSelecionada, preco){
-    sobremesa = sobremesaSelecionada;
+    sobremesa = document.querySelector(`.${sobremesaSelecionada} .titulo`).innerText;;
     precoSobremesa = preco;
     let opcoes = document.querySelectorAll('.sobremesa .opcao');
     for (let i=0; i < opcoes.length; i++){
@@ -55,6 +54,7 @@ function selecionarSobremesa(sobremesaSelecionada, preco){
 
 function ativarConfirmacao(){
     if (prato != 0 && bebida != 0 && sobremesa != 0){
+        total = precoPrato + precoBebida + precoSobremesa;
         const confirmacao = document.querySelector('.confirmacao');
         confirmacao.classList.remove('escondido');
         document.querySelector('.opcao-prato').innerHTML = prato;
@@ -74,6 +74,7 @@ function cancelar(){
 
 function finalizarPedido(){
     if (prato != 0 && bebida != 0 && sobremesa != 0){
+        total = total.toFixed(2);
         let nome = prompt('Qual seu nome?');
         let endereco = prompt('Qual seu endereço?');
         let mensagem = `Olá, gostaria de fazer o pedido:\n- Prato: ${prato}\n- Bebida: ${bebida}\n- Sobremesa: ${sobremesa}\nTotal: R$ ${total}\n\nNome: ${nome}\nEndereço: ${endereco}`;
