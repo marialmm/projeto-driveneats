@@ -134,11 +134,13 @@ footer{
 
 button{
     width: 100%;
+    min-height: 45px;
     border-radius: 50px;
     color: #FFFFFF;
     font-size: 20px;
     text-align: center;
     padding: 2px 18%;
+    border: none;
 }
 
 .selecionar{
@@ -171,6 +173,7 @@ button{
     color: #FFFFFF;
     padding: 21px 24px;
     width: 377px;
+    max-width: 98vw;
     height: 353px;
     display: flex;
     flex-direction: column;
@@ -209,6 +212,7 @@ button{
     color: #50D074;
     height: 52px;
     width: 329px;
+    max-width: 100%;
     font-weight: 700;
     font-size: 22px;
     line-height: 26px;

@@ -7,11 +7,13 @@ let precoSobremesa = 0;
 let total = 0;
 
 function ativarBotaoFinalizar(){
-    if (prato != 0 && bebida != 0 && sobremesa != 0){
-        const botao = document.querySelector('.selecionar');
-        botao.classList.add('finalizar');
-        botao.classList.remove('selecionar');
-        botao.innerHTML = 'Fechar pedido';
+    const botao = document.querySelector('.selecionar');
+    if (botao !== null){
+        if (prato != 0 && bebida != 0 && sobremesa != 0){
+            botao.classList.add('finalizar');
+            botao.classList.remove('selecionar');
+            botao.innerHTML = 'Fechar pedido';
+        }
     }
 }
 
